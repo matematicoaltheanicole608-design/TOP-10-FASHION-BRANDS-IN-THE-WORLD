@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fashion Icons | Top 10 Fashion Brands</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f5f0;
+    color: #202020;
+}
+
+header {
+    background: #171717;
+    color: white;
+    padding: 24px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #c9a76a;
+}
+
+.hero {
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    color: white;
+    background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1800")
+    center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero small {
+    color: #d9bd88;
+    letter-spacing: 5px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 7vw, 82px);
+    line-height: 1.1;
+    margin: 25px 0;
+}
+
+.hero p {
+    color: #eee;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 16px 30px;
+    background: #c9a76a;
+    color: #171717;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background: white;
+}
+
+.intro {
+    text-align: center;
+    padding: 85px 20px 45px;
+}
+
+.intro small {
+    color: #a18450;
+    letter-spacing: 4px;
+}
+
+.intro h2 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    margin: 18px 0;
+}
+
+.intro p {
+    color: #666;
+    max-width: 680px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.rankings {
+    padding: 25px 8% 90px;
+}
+
+.brand-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    margin: 35px 0;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,.06);
+}
+
+.brand-card:nth-child(even) .brand-image {
+    order: 2;
+}
+
+.brand-image {
+    min-height: 360px;
+    overflow: hidden;
+}
+
+.brand-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s;
+}
+
+.brand-card:hover img {
+    transform: scale(1.04);
+}
+
+.brand-info {
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rank {
+    color: #b3945d;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.brand-info h3 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    margin: 18px 0;
+}
+
+.country {
+    color: #a18450;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.brand-info p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.category {
+    display: inline-block;
+    margin-top: 20px;
+    color: #555;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.about {
+    background: #202020;
+    color: white;
+    text-align: center;
+    padding: 85px 10%;
+}
+
+.about h2 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #ccc;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.9;
+}
+
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 30px;
+    font-size: 13px;
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 60px 7%;
+    }
+
+    .intro h2 {
+        font-size: 32px;
+    }
+
+    .brand-card {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-card:nth-child(even) .brand-image {
+        order: 0;
+    }
+
+    .brand-image,
+    .brand-image img {
+        min-height: 280px;
+    }
+
+    .brand-info {
+        padding: 30px;
+    }
+
+    .brand-info h3 {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">FASHION ICONS</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#rankings">Top 10</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <small>THE GLOBAL FASHION EDITION</small>
+
+        <h1>THE WORLD'S TOP 10 FASHION BRANDS</h1>
+
+        <p>
+            Discover the world's most valuable and influential
+            fashion names, from timeless luxury houses to
+            globally recognized sportswear and fashion labels.
+        </p>
+
+        <a href="#rankings" class="button">
+            EXPLORE THE TOP 10
+        </a>
+    </div>
+</section>
+
+<section class="intro" id="rankings">
+    <small>STYLE • HERITAGE • INFLUENCE</small>
+
+    <h2>THE TOP 10 FASHION BRANDS</h2>
+
+    <p>
+        Explore ten major global fashion brands ranked
+        by reported brand value in the 2026 FashionUnited
+        index. Each brand has its own identity, history,
+        and influence on the fashion industry.
+    </p>
+</section>
+
+<main class="rankings">
+
+    <!-- 01 HERMES -->
+    <article class="brand-card">
+        <div class="brand-image">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=1000"
+            alt="Luxury handbag representing Hermès">
+        </div>
+        <div class="brand-info">
+            <span class="rank">01 / NUMBER ONE</span>
+            <h3>Hermès</h3>
+            <div class="country">France</div>
+            <p>
+                Founded in 1837, Hermès is renowned for
+                exceptional craftsmanship, leather goods,
+                silk scarves, and timeless luxury accessories.
+            </p>
+            <span class="category">Luxury Fashion & Accessories</span>
+        </div>
+    </article>
+
+    <!-- 02 LOUIS VUITTON -->
+    <article class="brand-card">
+        <div class="brand-image">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1000"
+            alt="Luxury designer handbag representing Louis Vuitton">
+        </div>
+        <div class="brand-info">
+            <span class="rank">02 / NUMBER TWO</span>
+            <h3>Louis Vuitton</h3>
+            <div class="country">France</div>
+            <p>
+                Established in 1854, Louis Vuitton is famous
+                for its travel heritage, signature monogram,
+                luxury handbags, clothing, and accessories.
+            </p>
+            <span class="category">Luxury Fashion</span>
+        </div>
+    </article>
+
+    <!-- 03 CHANEL -->
+    <article class="brand-card">
+        <div class="brand-image">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1000"
+            alt="Elegant fashion outfit representing Chanel">
+        </div>
+        <div class="brand-info">
+            <span class="rank">03 / NUMBER THREE</span>
+            <h3>Chanel</h3>
+            <div class="country">France</div>
+            <p>
+                Founded by Gabrielle Chanel, the house is
+                celebrated for the Chanel suit, the Little
+                Black Dress, haute couture, and timeless elegance.
+            </p>
+            <span class="category">Luxury Fashion & Beauty</span>
+        </div>
+    </article>
+
+    <!-- 04 NIKE -->
+    <article class="brand-card">
+        <div class="brand-image">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1000"
+            alt="Sportswear sneaker representing Nike">
+        </div>
+        <div class="brand-info">
+            <span class="rank">04 / NUMBER FOUR</span>
+            <h3>Nike</h3>
+            <div class="country">United States</div>
+            <p>
+                Founded in 1964 as Blue Ribbon Sports,
+                Nike became a global sportswear leader,
+                known for athletic footwear, apparel,
+                innovation, and iconic sports collaborations.
+            </p>
+            <span class="category">Sportswear & Footwear</span>
+        </div>
+    </article>
+
+    <!-- 05 ZARA -->
+    <article class="brand-card">
+        <div class="brand-image">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1000"
+            alt="Contemporary clothing representing Zara">
+        </div>
+        <div class="brand-info">
+            <span class="rank">05 / NUMBER FIVE</span>
+            <h3>Zara</h3>
+            <div class="country">Spain</div>
+            <p>
+                Founded in 1975, Zara is known for bringing
+                contemporary fashion trends to a global
+                audience through its fast-fashion retail model.
+            </p>
+            <span class="category">Fashion Retail</span>
+        </div>
+    </article>
+
+    <!-- 06 ADIDAS -->
+    <article class="brand-card">
+        <div class="brand-image">
+            <img src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=1000"
+            alt="Athletic footwear representing Adidas">
+        </div>
+        <div class="brand-info">
+            <span class="rank">06 / NUMBER SIX</span>
+            <h3>Adidas</h3>
+            <div class="country">Germany</div>
+            <p>
+                Founded in 1949, Adidas is recognized
+                worldwide for its three-stripe identity,
+                sportswear, sneakers, and collaborations
+                that connect sport and street fashion.
+            </p>
+            <span class="category">Sportswear & Footwear</span>
+        </div>
+    </article>
+
+    <!-- 07 CARTIER -->
+    <article class="brand-card">
+        <div class="brand-image">
+            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=1000"
+            alt="Luxury jewelry representing Cartier">
+        </div>
+        <div class="brand-info">
+            <span class="rank">07 / NUMBER SEVEN</span>
+            <h3>Cartier</h3>
+            <div class="country">France</div>
+            <p>
+                Founded in 1847, Cartier is celebrated
+                for fine jewelry, watches, iconic designs,
+                and a long tradition of luxury craftsmanship.
+            </p>
+            <span class="category">Luxury Jewelry & Watches</span>
+        </div>
+    </article>
+
+    <!-- 08 UNIQLO -->
+    <article class="brand-card">
+        <div class="brand-image">
+            <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=1000"
+            alt="Minimalist everyday clothing representing Uniqlo">
+        </div>
+        <div class="brand-info">
+            <span class="rank">08 / NUMBER EIGHT</span>
+            <h3>UNIQLO</h3>
+            <div class="country">Japan</div>
+            <p>
+                Known for its LifeWear philosophy, UNIQLO
+                focuses on simple, functional, comfortable
+                clothing and innovative everyday essentials.
+            </p>
+            <span class="category">Everyday Fashion & Retail</span>
+        </div>
+    </article>
+
+    <!-- 09 ROLEX -->
+    <article class="brand-card">
+        <div class="brand-image">
+            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1000"
+            alt="Luxury wristwatch representing Rolex">
+        </div>
+        <div class="brand-info">
+            <span class="rank">09 / NUMBER NINE</span>
+            <h3>Rolex</h3>
+            <div class="country">Switzerland</div>
+            <p>
+                Founded in 1905, Rolex is one of the world's
+                most recognized luxury watchmakers, known
+                for precision, craftsmanship, and iconic timepieces.
+            </p>
+            <span class="category">Luxury Watches</span>
+        </div>
+    </article>
+
+    <!-- 10 DIOR -->
+    <article class="brand-card">
+        <div class="brand-image">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1000"
+            alt="High fashion editorial representing Dior">
+        </div>
+        <div class="brand-info">
+            <span class="rank">10 / NUMBER TEN</span>
+            <h3>Dior</h3>
+            <div class="country">France</div>
+            <p>
+                Founded in 1946 by Christian Dior,
+                the fashion house became famous for
+                its New Look silhouette, haute couture,
+                ready-to-wear, and luxury accessories.
+            </p>
+            <span class="category">Luxury Fashion & Beauty</span>
+        </div>
+    </article>
+
+</main>
+
+<section class="about" id="about">
+    <h2>ABOUT FASHION ICONS</h2>
+    <p>
+        Fashion Icons explores the world's most recognized
+        fashion brands and their influence on style,
+        culture, craftsmanship, and modern design.
+
+        Our rankings are editorial features based on
+        published brand-value data.
+    </p>
+</section>
+
+<footer>
+    <p>FASHION ICONS © 2026</p>
+    <p>Celebrating Global Fashion and Style.</p>
+</footer>
+
+</body>
+</html>
+photo-1539109136881-3be0616acf4b
+
